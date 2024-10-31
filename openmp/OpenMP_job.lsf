@@ -1,0 +1,6 @@
+#BSUB -n 2
+#BSUB -W 00:15
+#BSUB -o "my_job.%J.out"
+#BSUB -e "my_job.%J.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=8 ../poisson_openmp 40 40 res_matrix_openmp.csv
